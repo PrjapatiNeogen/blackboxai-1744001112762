@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Wardrobe | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .outfit-card {
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 pb-16">
+  <div class="container mx-auto px-4 py-6">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">My Wardrobe</h1>
+      <div class="flex space-x-3">
+        <button class="text-gray-600">
+          <i class="fas fa-bell"></i>
+        </button>
+        <button class="text-gray-600">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Quick Try-On Button -->
+    <div class="mb-8">
+      <a href="try-on.html" class="block bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition duration-300">
+        <i class="fas fa-tshirt mr-2"></i> Quick Try-On
+      </a>
+    </div>
+
+    <!-- Featured Outfits -->
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Featured Outfits</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="outfit-card rounded-xl shadow-md relative" style="background-image: url('https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg')">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 rounded-b-xl">
+            <p class="text-white font-medium">Summer Casual</p>
+          </div>
+        </div>
+        <div class="outfit-card rounded-xl shadow-md relative" style="background-image: url('https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg')">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 rounded-b-xl">
+            <p class="text-white font-medium">Office Wear</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Try-Ons -->
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Try-Ons</h2>
+      <div class="flex space-x-4 overflow-x-auto pb-2">
+        <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg" alt="Try-on" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="https://images.pexels.com/photos/1485031/pexels-photo-1485031.jpeg" alt="Try-on" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="https://images.pexels.com/photos/1081685/pexels-photo-1081685.jpeg" alt="Try-on" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Style Suggestions -->
+    <section>
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Style Suggestions</h2>
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <div class="flex items-center space-x-3 mb-3">
+          <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+            <i class="fas fa-lightbulb text-blue-500"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">Mix & Match</h3>
+            <p class="text-sm text-gray-600">Try pairing your blue jeans with this white shirt</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
+            <i class="fas fa-calendar-alt text-purple-500"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">Weekend Look</h3>
+            <p class="text-sm text-gray-600">Perfect outfit for a casual weekend</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Load navigation bar
+    fetch('components/nav-bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+        // Set active tab
+        document.querySelectorAll('nav a')[0].classList.add('text-blue-500');
+        document.querySelectorAll('nav a')[0].classList.remove('text-gray-500');
+      });
+  </script>
+</body>
+</html>
