@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Wardrobe | My Wardrobe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .clothing-item {
+      transition: transform 0.2s;
+    }
+    .clothing-item:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 pb-16">
+  <div class="container mx-auto px-4 py-6">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">My Wardrobe</h1>
+      <button class="text-gray-600">
+        <i class="fas fa-plus"></i>
+      </button>
+    </header>
+
+    <!-- Tabs -->
+    <div class="mb-6">
+      <div class="flex border-b border-gray-200">
+        <button class="tab-btn py-2 px-4 font-medium text-blue-500 border-b-2 border-blue-500" data-tab="my-clothes">
+          My Clothes
+        </button>
+        <button class="tab-btn py-2 px-4 font-medium text-gray-500" data-tab="saved-looks">
+          Saved Looks
+        </button>
+        <button class="tab-btn py-2 px-4 font-medium text-gray-500" data-tab="upload">
+          Upload
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="my-clothes" class="tab-content active">
+      <!-- Categories -->
+      <div class="flex space-x-2 mb-4 overflow-x-auto pb-2">
+        <button class="category-btn px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium active">All</button>
+        <button class="category-btn px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Tops</button>
+        <button class="category-btn px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Bottoms</button>
+        <button class="category-btn px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Dresses</button>
+        <button class="category-btn px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Outerwear</button>
+        <button class="category-btn px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Accessories</button>
+      </div>
+
+      <!-- Clothing Grid -->
+      <div class="grid grid-cols-3 gap-3">
+        <div class="clothing-item bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="T-shirt" class="w-full h-24 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium truncate">White T-shirt</p>
+            <p class="text-xs text-gray-500">Added 2 days ago</p>
+          </div>
+        </div>
+        <div class="clothing-item bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg" alt="Jeans" class="w-full h-24 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium truncate">Blue Jeans</p>
+            <p class="text-xs text-gray-500">Added 1 week ago</p>
+          </div>
+        </div>
+        <div class="clothing-item bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg" alt="Sweater" class="w-full h-24 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium truncate">Gray Sweater</p>
+            <p class="text-xs text-gray-500">Added 3 days ago</p>
+          </div>
+        </div>
+        <div class="clothing-item bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg" alt="Blouse" class="w-full h-24 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium truncate">Silk Blouse</p>
+            <p class="text-xs text-gray-500">Added 2 weeks ago</p>
+          </div>
+        </div>
+        <div class="clothing-item bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/1485031/pexels-photo-1485031.jpeg" alt="Dress" class="w-full h-24 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium truncate">Summer Dress</p>
+            <p class="text-xs text-gray-500">Added 1 month ago</p>
+          </div>
+        </div>
+        <div class="clothing-item bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg" alt="Jacket" class="w-full h-24 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium truncate">Denim Jacket</p>
+            <p class="text-xs text-gray-500">Added 2 months ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="saved-looks" class="tab-content">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg" alt="Outfit" class="w-full h-32 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium">Casual Look</p>
+            <p class="text-xs text-gray-500">Saved yesterday</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer">
+          <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" alt="Outfit" class="w-full h-32 object-cover">
+          <div class="p-2">
+            <p class="text-sm font-medium">Office Outfit</p>
+            <p class="text-xs text-gray-500">Saved last week</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="upload" class="tab-content">
+      <div class="bg-white rounded-xl shadow-md p-6 text-center">
+        <div class="mb-4">
+          <i class="fas fa-cloud-upload-alt text-4xl text-blue-500"></i>
+        </div>
+        <p class="text-gray-600 mb-4">Upload new clothing items to your wardrobe</p>
+        <label class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg inline-block transition duration-300">
+          <input type="file" accept="image/*" class="hidden" multiple>
+          <i class="fas fa-upload mr-2"></i> Select Files
+        </label>
+        <p class="text-xs text-gray-500 mt-3">JPG, PNG up to 5MB</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Load navigation bar
+    fetch('components/nav-bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+        // Set active tab
+        document.querySelectorAll('nav a')[2].classList.add('text-blue-500');
+        document.querySelectorAll('nav a')[2].classList.remove('text-gray-500');
+      });
+
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Update tab buttons
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('text-blue-500', 'border-blue-500');
+          b.classList.add('text-gray-500');
+        });
+        this.classList.add('text-blue-500', 'border-blue-500');
+        this.classList.remove('text-gray-500');
+
+        // Show selected tab content
+        const tabId = this.getAttribute('data-tab');
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Category filtering
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.category-btn').forEach(b => {
+          b.classList.remove('active', 'bg-blue-100', 'text-blue-600');
+          b.classList.add('bg-gray-100', 'text-gray-600');
+        });
+        this.classList.add('active', 'bg-blue-100', 'text-blue-600');
+        this.classList.remove('bg-gray-100', 'text-gray-600');
+      });
+    });
+  </script>
+</body>
+</html>
