@@ -1,0 +1,28 @@
+name: virtual_wardrobe
+description: A mobile app for virtual clothing try-ons
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  font_awesome_flutter: ^10.5.0
+  image_picker: ^0.8.7+3
+  image_cropper: ^3.0.1
+  cached_network_image: ^3.3.0
+  provider: ^6.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
